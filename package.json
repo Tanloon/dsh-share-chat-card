@@ -1,0 +1,83 @@
+{
+  "name": "dsh-share-chat-card",
+  "version": "0.1.0",
+  "description": "Export any records of a DeepSeek Harness conversation as PNG images or one self-contained HTML page, with selection, reasoning blocks and a stats header (turn time, span, tokens). 把 DeepSeek Harness 会话里的任意几条记录导出成 PNG 图片或自包含的 HTML 页面，可挑选记录、含思考过程，并在文档头给出耗时、跨度与 token 统计。",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "screenshots.json",
+    "docs/*.png"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "dsh-share-chat-card",
+    "summary": "把会话记录导出成 PNG 图片或自包含 HTML 页面：任选记录、可含思考过程、文档头给出耗时/跨度/token 统计。",
+    "categories": [
+      "会话",
+      "Web UI",
+      "导出"
+    ],
+    "surfaces": [
+      "web"
+    ],
+    "capabilities": {
+      "provides": []
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0",
+      "node": ">=20"
+    },
+    "permissions": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanloon/dsh-share-chat-card.git"
+  },
+  "homepage": "https://github.com/Tanloon/dsh-share-chat-card#readme",
+  "bugs": {
+    "url": "https://github.com/Tanloon/dsh-share-chat-card/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "client-plugin",
+    "share",
+    "export",
+    "png",
+    "html",
+    "conversation",
+    "session",
+    "screenshot",
+    "i18n",
+    "zh",
+    "en"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
